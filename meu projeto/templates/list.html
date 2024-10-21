@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Contatos</title>
+    <style>
+        .centered-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 8px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+
+            margin: 20px 0;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ddd;
+        }
+
+        th,
+        td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        a {
+            color: blue;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centered-container">
+        <h1>Gerenciamento de Contatos</h1>
+        <p>Acesso a informações pessoais dos contatos:</p>
+
+        <a href="{{ url_for('contatos.add_contact') }}">Adicionar Novo
+
+            Contato</a>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Email</th>
+                <th>Data de Nascimento</th>
+                <th>Ações</th>
+            </tr>
+            {% for contato in contatos %}
+            <tr>
+                <td>{{ contato.nome }}</td>
+                <td>{{ contato.telefone }}</td>
+                <td>{{ contato.email }}</td>
+                <td>{{ contato.data_nascimento }}</td>
+                <td>
+                    <a href="{{ url_for('contatos.edit_contact',
+
+index=loop.index0) }}">Editar /</a>
+
+                    <a href="{{ url_for('contatos.delete_contact',
+
+index=loop.index0) }}">Excluir</a>
+
+                </td>
+            </tr>
+
+            {% else %}
+            <tr>
+                <td colspan="5">Não há contatos cadastrados.</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+</html>

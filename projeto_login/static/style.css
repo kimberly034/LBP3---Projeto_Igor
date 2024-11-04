@@ -1,0 +1,81 @@
+/* Fundo preto e texto verde */
+body {
+    background-color: #000; /* Fundo preto */
+    color: #00FF00; /* Texto verde neon */
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Container centralizado */
+.container {
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    border: 2px solid #00FF00; /* Borda verde */
+    border-radius: 8px;
+}
+
+/* Cabeçalhos */
+h1 {
+    color: #00FF00;
+    margin-bottom: 20px;
+}
+
+/* Links no menu de navegação */
+nav a {
+    color: #00FF00;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #33FF33; /* Verde mais claro ao passar o mouse */
+}
+
+/* Estilo para botões */
+button {
+    background-color: #00FF00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #33FF33; /* Verde mais claro ao passar o mouse */
+}
+
+/* Formulário de login */
+form input[type="text"],
+form input[type="password"] {
+    background-color: #111;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+form input[type="text"]::placeholder,
+form input[type="password"]::placeholder {
+    color: #00FF00;
+}
+
+/* Lista de mensagens de erro */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    color: #FF3333; /* Vermelho para mensagens de erro */
+}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<p>Bem-vindo ao painel!</p>
+{% endblock %}
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            
+            <nav>
+                <a href="{{ url_for('geral.index') }}">Home</a> |
+                <a href="{{ url_for('login.login') }}">Login</a>
+            </nav>
+            </div>
+            </body>
